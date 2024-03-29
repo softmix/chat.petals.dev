@@ -12,6 +12,17 @@ default_chat_config = ModelChatConfig(
 )
 
 MODEL_FAMILIES = {
+    "miqu": [
+        ModelConfig(
+            ModelBackendConfig(repository="wolfram/miqu-1-120b"),
+            ModelFrontendConfig(
+                name="Miqu 1 (120B)",
+                model_card="https://huggingface.co/wolfram/miqu-1-120b",
+                license="https://huggingface.co/wolfram/miqu-1-120b",
+            ),
+            default_chat_config,
+        ),
+    ],
     "Llama 2": [
         ModelConfig(
             ModelBackendConfig(repository="petals-team/StableBeluga2", aliases=["stabilityai/StableBeluga2"]),
