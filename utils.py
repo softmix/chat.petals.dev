@@ -11,7 +11,7 @@ from data_structures import ModelConfig
 logger = hivemind.get_logger(__file__)
 
 
-def load_models() -> Dict[str, Tuple[PreTrainedModel, PreTrainedTokenizer, ModelConfig]]:
+def load_models(dht: hivemind.DHT) -> Dict[str, Tuple[PreTrainedModel, PreTrainedTokenizer, ModelConfig]]:
     models = {}
     for family in config.MODEL_FAMILIES.values():
         for model_config in family:
